@@ -1,0 +1,11 @@
+From: Valid, Frozen, Missing
+To: Valid, Missing, SameAsFrom
+Amount: Normal, Zero, Negative, OverBalance, OverLimit, AtLimit
+Currency: Same, Different
+LimitState: Fresh, Partial
+
+IF [From] <> "Valid" THEN [To] = "Valid" AND [Amount] = "Normal" AND [Currency] = "Same" AND [LimitState] = "Fresh";
+
+IF [To] <> "Valid" THEN [From] = "Valid" AND [Amount] = "Normal" AND [Currency] = "Same" AND [LimitState] = "Fresh";
+
+IF [Amount] = "AtLimit" THEN [From] = "Valid" AND [To] = "Valid" AND [Currency] = "Same" AND [LimitState] = "Fresh";
